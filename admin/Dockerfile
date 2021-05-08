@@ -5,4 +5,3 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 COPY . /app
 
-cmd python manage.py runserver 0.0.0.0:8000
