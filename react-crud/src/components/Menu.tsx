@@ -12,7 +12,7 @@ const Menu = () => {
                   </li>
                 </ul>
               </div>
-            </nav>
+        </nav>
 
     );
 };

@@ -9,20 +9,22 @@ import Main from "./main/Main";
 function App() {
   return (
     <div className="App">
-        <Nav />
+        <Nav/>
 
 
             <div className="container-fluid">
                   <div className="row">
 
-                    <Menu />
+                    <Menu/>
 
                     <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
 
                         <BrowserRouter>
                             <Route path='/' component={Main} />
                             <Route path='/admin/products' component={Products}/>
                         </BrowserRouter>
+
 
                     </main>
                   </div>

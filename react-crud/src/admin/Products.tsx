@@ -2,7 +2,7 @@ import React from 'react';
 
 const Products = () => {
     return (
-    <div>
+
 
     <div className="table-responsive">
         <table className="table table-striped table-sm">
@@ -26,7 +26,7 @@ const Products = () => {
           </tbody>
         </table>
       </div>
-      </div>
+
     );
 };
 
