@@ -1,32 +1,57 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import Wrapper from './Wrapper';
+import {Product} from "../interfaces/product"
+
 
 const Products = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        (
+            async () => {
+                const response = await fetch('http://localhost:8000/api/products');
+
+                const data = await response.json();
+
+                setProducts(data);
+        }
+        )();
+    });
+
     return (
 
 
+<Wrapper>
     <div className="table-responsive">
         <table className="table table-striped table-sm">
           <thead>
             <tr>
               <th>#</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Likes</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
+          {products.map(
+                (p: Product) => {
+                return (
+                    <tr key={p.id}>
+                        <td>{p.id}</td>
+                        <td><img src={p.image} height="180"/></td>
+                        <td>{p.title}</td>
+                        <td>{p.title}</td>
+                        <td>text</td>
+                    </tr>
+                )
+          })}
+
           </tbody>
         </table>
       </div>
-
+</Wrapper>
     );
 };
 
